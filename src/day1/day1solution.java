@@ -14,16 +14,16 @@ public class day1solution {
         List<Integer> depths = initFile();
 
         // Part one
-        int positiveChanges = part_one(depths);
+        int positiveChanges = partOne(depths);
         System.out.println("Part One: " + positiveChanges);
 
         // Part two
-        positiveChanges = part_two(depths);
+        positiveChanges = partTwo(depths);
         System.out.println("Part Two: " + positiveChanges);
 
         // 74 MS @ 4770K
         long endTime = System.currentTimeMillis();
-        System.out.println("Total execution time: " + (endTime-startTime) + "ms");
+        System.out.println("Total execution time: " + (endTime - startTime) + "ms");
     }
 
     public static List<Integer> initFile() {
@@ -41,7 +41,7 @@ public class day1solution {
         return list;
     }
 
-    public static int part_one(List<Integer> list) {
+    public static int partOne(List<Integer> list) {
         int depthsIncrease = 0;
         for (int i = 0; i < list.size() - 1; i++) {
             if (list.get(i) < list.get(i + 1)) {
@@ -51,10 +51,11 @@ public class day1solution {
         return depthsIncrease;
     }
 
-    public static int part_two(List<Integer> list) {
+    public static int partTwo(List<Integer> list) {
         int depthsIncrease = 0;
         for (int i = 0; i < list.size() - 3; i++) {
-            if (list.get(i) + list.get(i + 1) + list.get(i + 2) < list.get(i + 1) + list.get(i + 2) + list.get(i + 3)) {
+            if (list.get(i) + list.get(i + 1) + list.get(i + 2)
+                    < list.get(i + 1) + list.get(i + 2) + list.get(i + 3)) {
                 depthsIncrease++;
             }
         }
